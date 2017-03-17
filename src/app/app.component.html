@@ -2,7 +2,10 @@
   {{title}}
 </h1>
 
-<button (click)=loadTodos() > Load Todos </button>
-<p>
- {{ profile | json }}
-</p>
+<input type="text" [(ngModel)]="text"/>
+<button (click)=addTask(text)> Add Task </button>
+<ul>
+  <li *ngFor = "let todo of todos">
+    {{todo.text }}
+  </li>
+</ul>
